@@ -184,9 +184,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
     
     // cell was swipe to deleted
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		
-		if (editingStyle == UITableViewCellEditingStyle.delete) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
 			
             if indexPath.section == 0 {
                 // Future event
@@ -201,7 +201,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             deleted += 1
             
             // update the table
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
 	

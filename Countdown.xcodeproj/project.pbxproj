@@ -13,30 +13,11 @@
 		50709A8C1EC9EF7D009E7017 /* Count_Down.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50709A8A1EC9EF7D009E7017 /* Count_Down.xcdatamodeld */; };
 		50709A8E1EC9EF7D009E7017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50709A8D1EC9EF7D009E7017 /* Assets.xcassets */; };
 		50709A911EC9EF7D009E7017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50709A8F1EC9EF7D009E7017 /* LaunchScreen.storyboard */; };
-		50709A9C1EC9EF7E009E7017 /* Count_DownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50709A9B1EC9EF7E009E7017 /* Count_DownTests.swift */; };
-		50709AA71EC9EF7E009E7017 /* Count_DownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50709AA61EC9EF7E009E7017 /* Count_DownUITests.swift */; };
 		507CF3BF1EC9FB69009176BB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CF3BE1EC9FB69009176BB /* AddViewController.swift */; };
 		507CF3C11EC9FDB4009176BB /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CF3C01EC9FDB4009176BB /* event.swift */; };
 		507CF3C31EC9FE25009176BB /* eventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CF3C21EC9FE25009176BB /* eventModel.swift */; };
 		507CF3C51ECA0260009176BB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CF3C41ECA0260009176BB /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		50709A981EC9EF7E009E7017 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50709A781EC9EF7D009E7017 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50709A7F1EC9EF7D009E7017;
-			remoteInfo = "Count Down";
-		};
-		50709AA31EC9EF7E009E7017 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50709A781EC9EF7D009E7017 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50709A7F1EC9EF7D009E7017;
-			remoteInfo = "Count Down";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		502D18891F730FC2009C2866 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -48,12 +29,6 @@
 		50709A8D1EC9EF7D009E7017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50709A901EC9EF7D009E7017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50709A921EC9EF7D009E7017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50709A971EC9EF7E009E7017 /* CountdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50709A9B1EC9EF7E009E7017 /* Count_DownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count_DownTests.swift; sourceTree = "<group>"; };
-		50709A9D1EC9EF7E009E7017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50709AA21EC9EF7E009E7017 /* CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50709AA61EC9EF7E009E7017 /* Count_DownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count_DownUITests.swift; sourceTree = "<group>"; };
-		50709AA81EC9EF7E009E7017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507CF3BE1EC9FB69009176BB /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		507CF3C01EC9FDB4009176BB /* event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
 		507CF3C21EC9FE25009176BB /* eventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventModel.swift; sourceTree = "<group>"; };
@@ -62,20 +37,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		50709A7D1EC9EF7D009E7017 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50709A941EC9EF7E009E7017 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50709A9F1EC9EF7E009E7017 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -97,8 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				50709A821EC9EF7D009E7017 /* Count Down */,
-				50709A9A1EC9EF7E009E7017 /* Count DownTests */,
-				50709AA51EC9EF7E009E7017 /* Count DownUITests */,
 				50709A811EC9EF7D009E7017 /* Products */,
 				502D18881F730FC1009C2866 /* Frameworks */,
 			);
@@ -108,8 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				50709A801EC9EF7D009E7017 /* Countdown.app */,
-				50709A971EC9EF7E009E7017 /* CountdownTests.xctest */,
-				50709AA21EC9EF7E009E7017 /* CountdownUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,24 +89,6 @@
 			path = "Count Down";
 			sourceTree = "<group>";
 		};
-		50709A9A1EC9EF7E009E7017 /* Count DownTests */ = {
-			isa = PBXGroup;
-			children = (
-				50709A9B1EC9EF7E009E7017 /* Count_DownTests.swift */,
-				50709A9D1EC9EF7E009E7017 /* Info.plist */,
-			);
-			path = "Count DownTests";
-			sourceTree = "<group>";
-		};
-		50709AA51EC9EF7E009E7017 /* Count DownUITests */ = {
-			isa = PBXGroup;
-			children = (
-				50709AA61EC9EF7E009E7017 /* Count_DownUITests.swift */,
-				50709AA81EC9EF7E009E7017 /* Info.plist */,
-			);
-			path = "Count DownUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,42 +109,6 @@
 			productReference = 50709A801EC9EF7D009E7017 /* Countdown.app */;
 			productType = "com.apple.product-type.application";
 		};
-		50709A961EC9EF7E009E7017 /* CountdownTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50709AAE1EC9EF7E009E7017 /* Build configuration list for PBXNativeTarget "CountdownTests" */;
-			buildPhases = (
-				50709A931EC9EF7E009E7017 /* Sources */,
-				50709A941EC9EF7E009E7017 /* Frameworks */,
-				50709A951EC9EF7E009E7017 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50709A991EC9EF7E009E7017 /* PBXTargetDependency */,
-			);
-			name = CountdownTests;
-			productName = "Count DownTests";
-			productReference = 50709A971EC9EF7E009E7017 /* CountdownTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		50709AA11EC9EF7E009E7017 /* CountdownUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50709AB11EC9EF7E009E7017 /* Build configuration list for PBXNativeTarget "CountdownUITests" */;
-			buildPhases = (
-				50709A9E1EC9EF7E009E7017 /* Sources */,
-				50709A9F1EC9EF7E009E7017 /* Frameworks */,
-				50709AA01EC9EF7E009E7017 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50709AA41EC9EF7E009E7017 /* PBXTargetDependency */,
-			);
-			name = CountdownUITests;
-			productName = "Count DownUITests";
-			productReference = 50709AA21EC9EF7E009E7017 /* CountdownUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,13 +119,13 @@
 					AddViewController,
 				);
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Max Stephenson";
 				TargetAttributes = {
 					50709A7F1EC9EF7D009E7017 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = C53J63H7VS;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
@@ -230,26 +133,13 @@
 							};
 						};
 					};
-					50709A961EC9EF7E009E7017 = {
-						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 50709A7F1EC9EF7D009E7017;
-					};
-					50709AA11EC9EF7E009E7017 = {
-						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 50709A7F1EC9EF7D009E7017;
-					};
 				};
 			};
 			buildConfigurationList = 50709A7B1EC9EF7D009E7017 /* Build configuration list for PBXProject "Countdown" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -259,8 +149,6 @@
 			projectRoot = "";
 			targets = (
 				50709A7F1EC9EF7D009E7017 /* Countdown */,
-				50709A961EC9EF7E009E7017 /* CountdownTests */,
-				50709AA11EC9EF7E009E7017 /* CountdownUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,20 +161,6 @@
 				50709A911EC9EF7D009E7017 /* LaunchScreen.storyboard in Resources */,
 				50709A8E1EC9EF7D009E7017 /* Assets.xcassets in Resources */,
 				50709A891EC9EF7D009E7017 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50709A951EC9EF7E009E7017 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50709AA01EC9EF7E009E7017 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,36 +181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50709A931EC9EF7E009E7017 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50709A9C1EC9EF7E009E7017 /* Count_DownTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50709A9E1EC9EF7E009E7017 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50709AA71EC9EF7E009E7017 /* Count_DownUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		50709A991EC9EF7E009E7017 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50709A7F1EC9EF7D009E7017 /* Countdown */;
-			targetProxy = 50709A981EC9EF7E009E7017 /* PBXContainerItemProxy */;
-		};
-		50709AA41EC9EF7E009E7017 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50709A7F1EC9EF7D009E7017 /* Countdown */;
-			targetProxy = 50709AA31EC9EF7E009E7017 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50709A871EC9EF7D009E7017 /* Main.storyboard */ = {
@@ -362,6 +207,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -383,6 +229,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -407,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -421,6 +268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -442,6 +290,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -460,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -479,12 +328,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Count Down/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VividInc.Countdown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -499,71 +348,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Count Down/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VividInc.Countdown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		50709AAF1EC9EF7E009E7017 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Count DownTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MaxStephenson.Count-DownTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countdown.app/Countdown";
-			};
-			name = Debug;
-		};
-		50709AB01EC9EF7E009E7017 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Count DownTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MaxStephenson.Count-DownTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countdown.app/Countdown";
-			};
-			name = Release;
-		};
-		50709AB21EC9EF7E009E7017 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = "Count DownUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MaxStephenson.Count-DownUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = "Count Down";
-			};
-			name = Debug;
-		};
-		50709AB31EC9EF7E009E7017 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = "Count DownUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MaxStephenson.Count-DownUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = "Count Down";
 			};
 			name = Release;
 		};
@@ -584,24 +375,6 @@
 			buildConfigurations = (
 				50709AAC1EC9EF7E009E7017 /* Debug */,
 				50709AAD1EC9EF7E009E7017 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50709AAE1EC9EF7E009E7017 /* Build configuration list for PBXNativeTarget "CountdownTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50709AAF1EC9EF7E009E7017 /* Debug */,
-				50709AB01EC9EF7E009E7017 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50709AB11EC9EF7E009E7017 /* Build configuration list for PBXNativeTarget "CountdownUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50709AB21EC9EF7E009E7017 /* Debug */,
-				50709AB31EC9EF7E009E7017 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

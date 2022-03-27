@@ -29,7 +29,7 @@ class CoreDataManager: NSObject {
         
         let managedObject = NSManagedObject(entity: entity!, insertInto: context)
         //let imageData = UIImagePNGRepresentation(event.eventImage) as NSData?
-        let imageData = UIImageJPEGRepresentation(event.eventImage, 0)
+        let imageData = event.eventImage.jpegData(compressionQuality: 0)
         
         managedObject.setValue(imageData, forKey: "entityImage")
         managedObject.setValue(event.title, forKey: "entityTitle")
@@ -74,7 +74,7 @@ class CoreDataManager: NSObject {
 extension UIImage {
     func fixOrientation() -> UIImage {
         
-        if self.imageOrientation == UIImageOrientation.up {
+        if self.imageOrientation == UIImage.Orientation.up {
             return self
         }
         
