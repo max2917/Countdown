@@ -7,19 +7,15 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var settingsBarButtonItem: UIBarButtonItem!
     
     // Variables
     let dateFormatter = DateFormatter()
-    var bannerView: GADBannerView!  // Google AdMob
     var daysUntil:Int = 0           // default value
-	let adView:GADBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-	var adViewBottom:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,34 +70,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		self.tableView.estimatedSectionFooterHeight = 0.1
 		self.tableView.estimatedSectionHeaderHeight = 0.1
         
-        // Google AdMob
-        // Create Banner View
-        adView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let leading:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .left, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .left, multiplier: 1, constant: 0)
-        let trailing:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .right, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .right, multiplier: 1, constant: 0)
-		let bottom:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .bottom, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .bottom, multiplier: 1, constant: CGFloat(adViewBottom)) // Initially hidden under the TableView
-        let height:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50)
-        
-        adView.addConstraint(height)
-        self.view.addSubview(adView)
-        self.view.addConstraints([leading, trailing, bottom])
-        
-        // Google AdMob
-        //bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-		GADMobileAds.configure(withApplicationID: "ca-app-pub-7642682252852299~2063456876")
-        adView.delegate = self
-        adView.adUnitID = "ca-app-pub-7642682252852299/8635947544"
-        adView.rootViewController = self
-        let request = GADRequest()
-        //request.testDevices = [ kGADSimulatorID, "e8be29008a71ec7e05fd6d0699d92da3" ]
-        adView.load(request)
-        adView.tag = 100
-        
-        // Dynamically change the bottom constraint of the tableView
-        let tableViewBottom:NSLayoutConstraint = NSLayoutConstraint(item: tableView, attribute: .bottom, relatedBy: .equal, toItem: adView, attribute: .top, multiplier: 1, constant: 0)
-        self.view.addConstraint(tableViewBottom)
-        
     } // viewDidLoad
 	
     override func didReceiveMemoryWarning() {
@@ -112,35 +80,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sortEvents()
         tableView.reloadData()
     }
-    
-    // *** Required Google AdMob delegate stuff ***
-    
-	// Tells the delegate an ad request loaded an ad. // UPDATE: animate adView displaying and hiding
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("adViewDidReceiveAd")
-		/*let bottomOLD:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .bottom, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .bottom, multiplier: 1, constant: 50)
-		let bottomNEW:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .bottom, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .bottom, multiplier: 1, constant: 0)
-		adView.removeConstraint(bottomOLD)
-		adView.addConstraint(bottomNEW)*/
-		/*self.adView.animate(withDuration: 0.2) {
-			adViewBottom = 0
-		}
-		let a = UIView.self
-		a.animate(withDuration: 0.2) {
-			
-		}*/
-    }
-    // Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-		/*let bottomOLD:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .bottom, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .bottom, multiplier: 1, constant: 0)
-		let bottomNEW:NSLayoutConstraint = NSLayoutConstraint(item: adView, attribute: .bottom, relatedBy: .equal, toItem: self.view.viewWithTag(15), attribute: .bottom, multiplier: 1, constant: 50)
-		adView.removeConstraint(bottomOLD)
-		adView.addConstraint(bottomNEW)*/
-    }
-    
-    // *** End Required Google AdMob delegate stuff ***
     
     // *** Required for UITableViewDataSource and UITableCiewDelegate ***
     

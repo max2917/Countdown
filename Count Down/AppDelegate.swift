@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,9 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Number of times app has been opened
 		self.currentTimesOfOpenApp = getCurrentTimesOfOpenApp()
-        
-        // Google AdMob -- Initialize the Google Mobile Ads SDK
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-7642682252852299~2063456876")
 		
         return true
     }

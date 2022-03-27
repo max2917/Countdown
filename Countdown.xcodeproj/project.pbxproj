@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502D188A1F730FC2009C2866 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502D18891F730FC2009C2866 /* GoogleMobileAds.framework */; };
 		50709A841EC9EF7D009E7017 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50709A831EC9EF7D009E7017 /* AppDelegate.swift */; };
 		50709A861EC9EF7D009E7017 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50709A851EC9EF7D009E7017 /* ViewController.swift */; };
 		50709A891EC9EF7D009E7017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50709A871EC9EF7D009E7017 /* Main.storyboard */; settings = {ASSET_TAGS = (AddViewController, ); }; };
@@ -66,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				502D188A1F730FC2009C2866 /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +249,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
