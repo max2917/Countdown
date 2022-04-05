@@ -38,7 +38,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 		titleField.font = .systemFont(ofSize: 30)
 		titleField.adjustsFontSizeToFitWidth = false
 		titleField.returnKeyType = UIReturnKeyType.done
-		titleField.clearButtonMode = UITextFieldViewMode.whileEditing
+        titleField.clearButtonMode = UITextField.ViewMode.whileEditing
 		titleField.autocapitalizationType = .words
 		
 		titleField.borderStyle = .none
@@ -46,14 +46,14 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 		titleField.layer.masksToBounds = true
 		let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 7, height: titleField.frame.height))
 		titleField.leftView = paddingView
-		titleField.leftViewMode = UITextFieldViewMode.always
+        titleField.leftViewMode = UITextField.ViewMode.always
 		self.titleField.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.2)
 		titleField.textColor = UIColor.white
 		
 		titleField.delegate = self
         
         if mainViewControllerTapped == nil {
-			print("mainViewTapped == nil")
+			print("Add new view")
             titleField.text = "Event Name"   // Initial Title Value
             dateLabel.text = dateFormatter.string(from: dateObject) // Replace
             daysUntilLabel.text = String(daysUntil)
@@ -62,7 +62,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 			self.dimmerView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.10)
         }
         else if mainViewControllerTapped != nil {
-			print("mainViewTapped != nil")
+			print("Edit existing view")
 			print("eventColor: " + String(eventsArray[mainViewControllerTapped!].eventColor))
             titleField.text = eventsArray[mainViewControllerTapped!].title
             dateLabel.text = dateFormatter.string(from: eventsArray[mainViewControllerTapped!].eventDate)
@@ -108,7 +108,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         
         // imageView parameters
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         
     }
     
@@ -204,7 +204,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 			let centerVertical = NSLayoutConstraint(item: datePicker, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1, constant: 0)
 			
 			// Set attributes
-			datePicker.datePickerMode = UIDatePickerMode.date
+            datePicker.datePickerMode = UIDatePicker.Mode.date
 			if mainViewControllerTapped != nil {
 				datePicker.date = eventsArray[mainViewControllerTapped!].eventDate
 			}
@@ -402,12 +402,12 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func imageFromCamera() {
         
         // Check if the device has a camera
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
             
             // Device has a camera, now create the image picker controller
             let imagePicker:UIImagePickerController = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = true
             
             self.present(imagePicker, animated: true, completion: nil)
@@ -421,7 +421,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             // Device has a photo library
             let imagePicker:UIImagePickerController = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
@@ -432,7 +432,7 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Dismiss the imagePicker
         self.dismiss(animated: true, completion: nil)
         // Store the image somewhere
-        self.imageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        self.imageView.image = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage
         
     }
 	

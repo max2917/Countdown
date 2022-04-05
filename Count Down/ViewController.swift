@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let dateFormatter = DateFormatter()
     var daysUntil:Int = 0           // default value
     
+    // MARK: View did load
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,13 +30,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		let delegate = UIApplication.shared.delegate as! AppDelegate
 		let times = delegate.currentTimesOfOpenApp
 		
-		print("TIMES OPENED:\t" + String(times))
+		print("ViewController\tviewDidLoad\tTIMES OPENED:\t" + String(times))
 		
 		if (times == 1) {
 			// App has never been opened before
 			// Create first time default data
 			print(eventsArray.count)
 			if eventsArray.count == 0 {
+                print("ViewController\tviewDidLoad\t\tApp has never been opened. Created events...")
 				// If there are no events, create initial default events
 				let birthday = event(titleInit: "Hottest Day on Earth", dateZeroInit: Date(timeIntervalSinceReferenceDate: 369273600), imageInit: #imageLiteral(resourceName: "defaultImage1"), colorInit: false)
 				let newyears = event(titleInit: "New Years 2019", dateZeroInit: Date(timeIntervalSinceReferenceDate: 568080000), imageInit: #imageLiteral(resourceName: "defaultImage3"), colorInit: false)
@@ -47,13 +50,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 				CoreDataManager.storeObject(event: eventsArray[0])
 				CoreDataManager.storeObject(event: eventsArray[1])
 				CoreDataManager.storeObject(event: eventsArray[2])
-			}
+            }
 		}
 		else {
 			// App has been opened, fetch stored data
 			// Load save state
+            print("ViewController\tviewDidLoad\t\tloading events...")
 			print(eventsArray.count)
 			eventsArray = CoreDataManager.fetchObject()
+            print(eventsArray.count)
 		}
         
         // sort array
@@ -77,12 +82,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
+        print("ViewController\tviewWillAppear")
         sortEvents()
         tableView.reloadData()
     }
     
+    // MARK: TableView Functions
     // *** Required for UITableViewDataSource and UITableCiewDelegate ***
     
+    // MARK: numberOfRowsInSection
     // Set number of rows in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Find out how many events there are in each section
@@ -94,8 +102,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 else { past = past + 1 }
             }
         }
-        if section == 0 { return future }
-        else { return past }
+//        print("there are " + future + " future events and " + past + " past events")
+        if section == 0 { print("ViewController\tnumberOfRowsInSection FUTURE \(future)"); return future }
+        else { print("ViewController\tnumberOfRowsInSection PAST \(past)"); return past }
     }
     
     // Set number of sections
@@ -103,12 +112,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Set section header title
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        print("ViewController\ttitleForHeaderInSection \(section)")
         if section == 0 { return "Future Events" }
         else { return "Past Events" }
     }
     
-    // cellForRowAtIndexPath
+    // MARK: cellForRowAtIndexPath
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print(" ***** cellForRowAtIndexPath \(indexPath.row) *****")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "prototypeCell")!
         
@@ -117,7 +129,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let maybeDays       = cell.viewWithTag(4) as? UILabel
         let maybeDaysUntil  = cell.viewWithTag(3) as? UILabel
         let maybeImage      = cell.viewWithTag(5) as? UIImageView
-		let maybeDimmerView	= cell.viewWithTag(6) as? UIView
+        let maybeDimmerView	= cell.viewWithTag(6)
         
         var currentIndex = 0
         
@@ -169,6 +181,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Row tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print("row tapped")
+        
         // Un-highlight the cell afterwards
         tableView.deselectRow(at: IndexPath.init(row: indexPath.row, section: indexPath.section), animated: true)
         
@@ -181,11 +195,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     // cell was swipe to deleted
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-		
+		print("ViewController\teditingStyle")
         if (editingStyle == UITableViewCell.EditingStyle.delete) {
 			
             if indexPath.section == 0 {
@@ -205,9 +221,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 	
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return 150 }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("ViewController\theightForRowAt")
+        return 150
+    }
     
     // *** End tableView ***
+    
+    // MARK: Button Outlet
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBAction func addButtonTapped(_ sender: Any) {
@@ -217,15 +238,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

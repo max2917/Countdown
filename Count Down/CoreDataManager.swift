@@ -56,7 +56,7 @@ class CoreDataManager: NSObject {
             for item in fetchResultVar {
                 if item.entityTitle != nil && item.entityDate != nil && item.entityImage != nil {
                     print(item.entityTitle!)
-					array.append(event(titleInit: item.entityTitle!, dateZeroInit: item.entityDate! as Date, imageInit: UIImage(data: (item.entityImage!) as Data)!, colorInit: item.entityColor as! Bool))
+                    array.append(event(titleInit: item.entityTitle!, dateZeroInit: item.entityDate! as Date, imageInit: UIImage(data: (item.entityImage!) as Data)!, colorInit: item.entityColor))
                 }
             }
         } catch { }

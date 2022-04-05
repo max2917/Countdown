@@ -18,9 +18,10 @@ var deleted = 0
 var popoverNeeded:Bool = false
 let darkColor = #colorLiteral(red: 0.1370554393, green: 0.1384124238, blue: 0.1384124238, alpha: 1)
 
+// MARK: calculateDaysUntil
 func calculateDaysUntil(ofComponent comp: Calendar.Component, referenceDate: Date) -> Int {
 	
-	//print("START CALCULATE DAYS UNTIL")
+//	print("Calculating days until...")
 	
     let currentCalendar = Calendar.current
 	
@@ -98,8 +99,11 @@ func calculateDaysUntil(ofComponent comp: Calendar.Component, referenceDate: Dat
     
 }
 
+// MARK: sortEvents
 func sortEvents() {
 	
+    print("eventModel\tSorting events...")
+    
 	// If there is nothing in the eventsArray then there is nothing to sort, attempting to sort will crash application
 	if eventsArray.count < 1 { return }
     
