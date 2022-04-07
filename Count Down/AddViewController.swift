@@ -122,16 +122,22 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
+        print("AddViewController\tsaveButtonTapped")
+        
         // Grab whatever is in the textfiled before data is sent off
         getTextField()
         
         // Send gathered data back to the events array
         if mainViewControllerTapped == nil {
+            print("AddViewController\tCreating new event \(titleField.text!)")
 			let newEvent:event = event(titleInit: titleField.text!, dateZeroInit: dateObject, imageInit: imageView.image!, colorInit: colorSwitch.isOn)
             eventsArray.append(newEvent)
         } else {
+            print("AddViewController\tEditing existing event \(titleField.text!)")
 			eventsArray[mainViewControllerTapped!] = event(titleInit: titleField.text!, dateZeroInit: dateObject, imageInit: imageView.image!, colorInit: colorSwitch.isOn)
         }
+        
+        // TODO: reload table
         
         // Dismiss the view
         self.dismiss(animated: true, completion: nil)
@@ -154,7 +160,8 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     let titleTextField = UITextField()
 	let colorSwitchLabel = UILabel()		// Cell 1 Section 0
 	let colorSwitch = UISwitch()
-    let datePicker = UIDatePicker()         // Cell 2 Section 0
+    let datePickerLabel = UILabel()         // Cell 2 Section 0
+    let datePicker = UIDatePicker()
     let imagePickerButtonLabel = UILabel()  // Cell 3 Section 0
     let deleteButtonLabel = UILabel()       // Cell 0 Section 1
     
@@ -163,6 +170,8 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         else { return 2 }
         
     }
+    
+    // MARK: User Interface
     // Build the tableView interface
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -196,12 +205,17 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 			// Cell 1 Section 0
 		else if indexPath.section == 0 && indexPath.row == 1 {
 			
+            datePickerLabel.text = "Date"
+            
 			// Create constraints
 			datePicker.translatesAutoresizingMaskIntoConstraints = false
+            datePickerLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            let leftDPL = NSLayoutConstraint(item: datePickerLabel, attribute: .left, relatedBy: .equal, toItem: cell, attribute: .left, multiplier: 1, constant: 15)
+            let centerVerticalDPL = NSLayoutConstraint(item: datePickerLabel, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1, constant: 0)
 			
-			let left = NSLayoutConstraint(item: datePicker, attribute: .left, relatedBy: .equal, toItem: cell, attribute: .left, multiplier: 1, constant: 0)
-			let right = NSLayoutConstraint(item: datePicker, attribute: .right, relatedBy: .equal, toItem: cell, attribute: .right, multiplier: 1, constant: 0)
-			let centerVertical = NSLayoutConstraint(item: datePicker, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1, constant: 0)
+			let rightDP = NSLayoutConstraint(item: datePicker, attribute: .right, relatedBy: .equal, toItem: cell, attribute: .right, multiplier: 1, constant: -15)
+			let centerVerticalDP = NSLayoutConstraint(item: datePicker, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1, constant: 0)
 			
 			// Set attributes
             datePicker.datePickerMode = UIDatePicker.Mode.date
@@ -212,7 +226,8 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 			
 			// Add items and constraints to the cell and items
 			cell.addSubview(datePicker)
-			cell.addConstraints([left, right, centerVertical])
+            cell.addSubview(datePickerLabel)
+			cell.addConstraints([leftDPL, centerVerticalDPL, rightDP, centerVerticalDP])
 		}
             
             // Cell 2 Section 0
@@ -337,11 +352,14 @@ class AddViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // Set custom row heights
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // Cell 1 Section 0
-        if indexPath.section == 0 && indexPath.row == 1 {
-            return 180
-        }
-            // Default height
-        else { return 44 }
+        // NO LONGER USED DUE TO DATE PICKER STYLE CHANGES
+//        if indexPath.section == 0 && indexPath.row == 1 {
+//            return 180
+//        }
+//            // Default height
+//        else { return 44 }
+        
+        return 44 // Default height
     }
 	
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

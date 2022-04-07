@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Variables
     let dateFormatter = DateFormatter()
-    var daysUntil:Int = 0           // default value
+    var daysUntil:Int = 0   // default value
     
     // MARK: View did load
     
@@ -181,7 +181,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Row tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("row tapped")
+        print("ViewController\tdidSelectRowAt \(indexPath)")
         
         // Un-highlight the cell afterwards
         tableView.deselectRow(at: IndexPath.init(row: indexPath.row, section: indexPath.section), animated: true)
