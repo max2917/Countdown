@@ -14,6 +14,8 @@
 		50DBDF5A27FE861C007C76DB /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBDF5927FE861C007C76DB /* CountdownTests.swift */; };
 		50DBDF6427FE861C007C76DB /* CountdownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBDF6327FE861C007C76DB /* CountdownUITests.swift */; };
 		50DBDF6627FE861C007C76DB /* CountdownUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBDF6527FE861C007C76DB /* CountdownUITestsLaunchTests.swift */; };
+		50DBDF7327FE88FA007C76DB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBDF7227FE88FA007C76DB /* Event.swift */; };
+		50DBDF7527FE8AAC007C76DB /* CountdownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBDF7427FE8AAC007C76DB /* CountdownModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		50DBDF5F27FE861C007C76DB /* CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DBDF6327FE861C007C76DB /* CountdownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITests.swift; sourceTree = "<group>"; };
 		50DBDF6527FE861C007C76DB /* CountdownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50DBDF7227FE88FA007C76DB /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		50DBDF7427FE8AAC007C76DB /* CountdownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				50DBDF4827FE861B007C76DB /* CountdownApp.swift */,
 				50DBDF4A27FE861B007C76DB /* ContentView.swift */,
+				50DBDF7427FE8AAC007C76DB /* CountdownModel.swift */,
+				50DBDF7227FE88FA007C76DB /* Event.swift */,
 				50DBDF4C27FE861C007C76DB /* Assets.xcassets */,
 				50DBDF4E27FE861C007C76DB /* Preview Content */,
 			);
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DBDF4B27FE861B007C76DB /* ContentView.swift in Sources */,
+				50DBDF7527FE8AAC007C76DB /* CountdownModel.swift in Sources */,
+				50DBDF7327FE88FA007C76DB /* Event.swift in Sources */,
 				50DBDF4927FE861B007C76DB /* CountdownApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
